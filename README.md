@@ -40,7 +40,3 @@ These answers guide how NeuroFit's AI agent tailors its suggestions.
 - **RAG + LLMs** – for health advice, powered by trusted sources
 - **Reinforcement Learning** – adaptive recommendation engine
 
----
-
-## ⚙️ Project Structure
-
