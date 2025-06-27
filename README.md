@@ -35,7 +35,7 @@ These answers guide how NeuroFit's AI agent tailors its suggestions.
 
 - **Flutter** – cross-platform mobile app
 - **Firebase** – user auth, health data, goal tracking
-- **SQL (optionally)** – for detailed logs, analytics
+- **SQL** – for detailed logs, analytics
 - **Riverpod** – state management
 - **RAG + LLMs** – for health advice, powered by trusted sources
 - **Reinforcement Learning** – adaptive recommendation engine
