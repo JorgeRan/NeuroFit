@@ -11,6 +11,7 @@ final signUpPassword = StateProvider<String>((ref) => '');
 final firstName = StateProvider<String>((ref) => '');
 final lastName = StateProvider<String>((ref) => '');
 
+final unansweredAccountQuestions = StateProvider<Set<int>>((ref) => {});
 
 signUpFunction() {
   print('Sign up function called');

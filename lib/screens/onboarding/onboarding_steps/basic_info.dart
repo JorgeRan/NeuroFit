@@ -9,7 +9,6 @@ class BasicInfo extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectedAge = ref.watch(selectedAgeProvider);
     final selectedGender = ref.watch(selectedGenderProvider);
     final selectedHeightUnit = ref.watch(selectedHeightUnitProvider);
     final selectedWeightUnit = ref.watch(selectedWeightUnitProvider);

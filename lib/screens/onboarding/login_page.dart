@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:neurofit_app/constants.dart';
-import 'package:neurofit_app/screens/onboarding/signUp_page.dart';
 import 'package:neurofit_app/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'onboarding_screen.dart';
-import 'package:neurofit_app/providers.dart';
+import 'signUp_page.dart';
 
 final signInEmail = StateProvider<String?>((ref) => '');
 final signInPassword = StateProvider<String?>((ref) => '');
