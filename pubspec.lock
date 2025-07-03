@@ -155,6 +155,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.2.1"
+  gradient_progress_bar:
+    dependency: "direct main"
+    description:
+      name: gradient_progress_bar
+      sha256: "7a2b2900efe2afa64a410eefafe06de9ee15d4b55b63fd9c4f7e631a5339c91b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.7"
   http:
     dependency: transitive
     description:
@@ -299,6 +307,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
+  percent_indicator:
+    dependency: "direct main"
+    description:
+      name: percent_indicator
+      sha256: "157d29133bbc6ecb11f923d36e7960a96a3f28837549a20b65e5135729f0f9fd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.5"
   petitparser:
     dependency: transitive
     description:

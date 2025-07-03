@@ -8,7 +8,7 @@ import 'onboarding_steps/fitness_preferences.dart';
 import 'onboarding_steps/health_goals.dart';
 
 import 'package:neurofit_app/constants.dart';
-import 'package:neurofit_app/screens/home_page.dart';
+import 'package:neurofit_app/screens/navigation/home_page.dart';
 
 // Step counter
 final counterProvider = StateProvider<int>((ref) => 0);

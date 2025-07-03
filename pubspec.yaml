@@ -42,6 +42,8 @@ dependencies:
   linear_progress_bar: ^1.2.0
   riverpod: ^2.6.1
   flutter_riverpod: ^2.6.1
+  percent_indicator: ^4.2.5
+  gradient_progress_bar: ^1.0.7
 
 dev_dependencies:
   flutter_test:
