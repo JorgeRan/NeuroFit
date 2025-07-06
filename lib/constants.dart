@@ -20,10 +20,19 @@ const Color kCardBlue = Color(0xFF3B82F6);
 
 const Color kFieldBorder = Color(0xFFD1D5DB);
 
+const Color kTextGrey = Color(0xFF757575);
+
+
 const TextStyle kParagraphText = TextStyle(color: kBlack, fontSize: 15);
 
 const TextStyle kQuestionsText =
     TextStyle(color: kBlack, fontSize: 15, fontWeight: FontWeight.bold);
+
+const TextStyle kTitleCard = TextStyle(
+  color: kBlack,
+  fontWeight: FontWeight.bold,
+  fontSize: 20,
+);
 
 TextStyle kAppName = GoogleFonts.sourceSerif4(
   color: kBlue,

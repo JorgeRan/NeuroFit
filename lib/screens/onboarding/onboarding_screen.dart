@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:neurofit_app/screens/navigation_screen.dart';
 import 'package:neurofit_app/widgets.dart';
 import 'onboarding_steps/basic_info.dart';
 import 'onboarding_steps/challenges_support.dart';
@@ -177,10 +178,7 @@ class OnboardingScreen extends ConsumerWidget {
           "${ref.watch(selectedFtProvider)} ft ${ref.watch(selectedInProvider)} in";
     }
 
-    if (counter.state == 5) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
-    }
+    
 
     final currentStep = counter.state;
 
@@ -202,6 +200,11 @@ class OnboardingScreen extends ConsumerWidget {
 
     if (unanswered.isEmpty) {
       counter.state++;
+    }
+
+    if (counter.state == 5) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => NavigationScreen()));
     }
 
     //counter.state++;
