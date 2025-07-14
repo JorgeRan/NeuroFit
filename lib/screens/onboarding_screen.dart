@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:neurofit_app/screens/navigation_screen.dart';
 import 'package:neurofit_app/widgets.dart';
-import 'onboarding_steps/basic_info.dart';
-import 'onboarding_steps/challenges_support.dart';
-import 'onboarding_steps/dietary_preferences.dart';
-import 'onboarding_steps/fitness_preferences.dart';
-import 'onboarding_steps/health_goals.dart';
+import 'onboarding/onboarding_steps/basic_info.dart';
+import 'onboarding/onboarding_steps/challenges_support.dart';
+import 'onboarding/onboarding_steps/dietary_preferences.dart';
+import 'onboarding/onboarding_steps/fitness_preferences.dart';
+import 'onboarding/onboarding_steps/health_goals.dart';
 
 import 'package:neurofit_app/constants.dart';
 import 'package:neurofit_app/screens/navigation/home_page.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:neurofit_app/constants.dart';
 import 'package:neurofit_app/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:neurofit_app/screens/onboarding/onboarding_screen.dart';
+import 'package:neurofit_app/screens/onboarding_screen.dart';
 
 class BasicInfo extends ConsumerWidget {
   const BasicInfo({super.key});

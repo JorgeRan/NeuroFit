@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:neurofit_app/screens/onboarding/onboarding_screen.dart';
+import 'package:neurofit_app/screens/onboarding_screen.dart';
 import 'package:neurofit_app/screens/onboarding/signUp_page.dart';
 import 'classes.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,6 +22,7 @@ const Color kFieldBorder = Color(0xFFD1D5DB);
 
 const Color kTextGrey = Color(0xFF757575);
 
+const Color kWorkoutPageColor = Color(0xFFEBF4FF);
 
 const TextStyle kParagraphText = TextStyle(color: kBlack, fontSize: 15);
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:neurofit_app/constants.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:neurofit_app/screens/onboarding/onboarding_screen.dart';
+import 'package:neurofit_app/screens/onboarding_screen.dart';
 import 'package:neurofit_app/screens/onboarding/signUp_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:neurofit_app/providers.dart';

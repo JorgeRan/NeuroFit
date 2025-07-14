@@ -149,7 +149,7 @@ class HomePage extends ConsumerWidget {
               color: kWhite,
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -302,7 +302,7 @@ class HomePage extends ConsumerWidget {
               color: kWhite,
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 child: GestureDetector(
                   onTap: () {
                     print('Goal progress');
@@ -429,7 +429,7 @@ class HomePage extends ConsumerWidget {
               color: kWhite,
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 child: GestureDetector(
                   onTap: () {
                     print('Goal progress');
@@ -447,7 +447,7 @@ class HomePage extends ConsumerWidget {
                               Icons.arrow_forward_ios_rounded,
                               color: Colors.grey[600],
                               size: 20,
-                            )
+                            ),
                           ],
                         ),
                         SizedBox(height: 15,),
@@ -457,6 +457,9 @@ class HomePage extends ConsumerWidget {
                           calories: '425 cal',
                           date: 'Today',
                         ),
+                        Divider(
+                            color: Colors.grey[200],
+                          ),
 
                         RecentActivity(
                           label: 'Strength',
@@ -464,6 +467,9 @@ class HomePage extends ConsumerWidget {
                           calories: '285 cal',
                           date: 'Yesterday',
                         ),
+                        Divider(
+                            color: Colors.grey[200],
+                          ),
                         RecentActivity(
                           label: 'Cycling',
                           time: '60 min',
@@ -555,7 +561,7 @@ class HomePage extends ConsumerWidget {
                       print('sleep logged');
                     },
                     icon: Image.asset(
-                      'images/sleep_white.png',
+                      'assets/images/sleep_white.png',
                       width: 28,
                     ),
                   ),
