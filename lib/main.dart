@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:neurofit_app/Test.dart';
-import 'package:neurofit_app/constants.dart';
-import 'package:neurofit_app/screens/navigation/home_page.dart';
-import 'package:neurofit_app/screens/navigation_screen.dart';
-import 'package:neurofit_app/screens/onboarding_screen.dart';
-import 'package:neurofit_app/screens/onboarding/signUp_page.dart';
-import 'package:neurofit_app/screens/onboarding/welcome_page.dart';
+import 'package:neurofit_app/core/constants/constants.dart';
+import 'package:neurofit_app/features/home/presentation/screens/home_screens.dart';
+import 'package:neurofit_app/shared/presentation/screens/navigation_screen.dart';
+import 'package:neurofit_app/features/onboarding/presentation/screens/onboarding_screen.dart';
+import 'package:neurofit_app/features/auth/presentation/screens/signUp_screen.dart';
+import 'package:neurofit_app/features/onboarding/presentation/screens/info/welcome_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -20,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: kLightGrey,

@@ -1,9 +1,0 @@
-| Option          | Description / Use for Tone Calibration         |
-| --------------- | ---------------------------------------------- |
-| **Friendly**    | Supportive, casual nudges ("You've got this!") |
-| **Scientific**  | Facts, studies, and logic-backed suggestions   |
-| **Challenging** | Motivational, “push me harder” tone            |
-| **Mindful**     | Calming, encouraging awareness-based support   |
-| **Playful**     | Gamified, fun, lighthearted tone               |
-| **Minimal**     | Only essential notifications                   |
-| **Other**       | Optional free-text or fallback                 |
