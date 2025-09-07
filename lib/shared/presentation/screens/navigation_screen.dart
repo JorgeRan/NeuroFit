@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:neurofit_app/core/constants/constants.dart';
 import 'package:neurofit_app/features/nutrition/presentation/screens/nutrition_screen.dart';
-import 'package:neurofit_app/features/workout/presentation/screens/workout_screens.dart';
+import 'package:neurofit_app/features/workout/presentation/screens/exercise_screen.dart';
 import 'package:neurofit_app/features/home/presentation/screens/home_screens.dart';
 import 'package:neurofit_app/shared/presentation/widgets/widgets.dart';
 import 'package:neurofit_app/features/workout/presentation/widgets/workout_widgets.dart';
@@ -48,200 +48,196 @@ class NavigationScreen extends ConsumerWidget {
               ),
               backgroundColor: kBlue,
               onPressed: () => showDialog(
-                    context: context,
-                    builder: (_) {
-                      return Dialog(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(10)),
-                        insetPadding:
-                            EdgeInsets.zero, // removes default dialog margin
-                        backgroundColor: kWhite,
-                        child: LayoutBuilder(
-                          builder: (context, constraints) {
-                            return SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.80,
-                              width: MediaQuery.of(context).size.width * 0.95,
-                              child: SingleChildScrollView(
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 15),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 15),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text('Log Workout',
-                                                style: kTitleCard),
-                                            GestureDetector(
-                                              onTap: () =>
-                                                  Navigator.pop(context),
-                                              child: Icon(Icons.close),
-                                            ),
-                                          ],
+                context: context,
+                builder: (_) {
+                  return Dialog(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.circular(10)),
+                    insetPadding:
+                        EdgeInsets.zero, // removes default dialog margin
+                    backgroundColor: kWhite,
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        return SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.80,
+                          width: MediaQuery.of(context).size.width * 0.95,
+                          child: SingleChildScrollView(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 15),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 15),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text('Log Workout', style: kTitleCard),
+                                        GestureDetector(
+                                          onTap: () => Navigator.pop(context),
+                                          child: Icon(Icons.close),
                                         ),
-                                      ),
-                                      Divider(),
-                                      QuestionTextWidget(
-                                        question: 'Workout Type',
-                                      ),
-                                      CustomTextField(
-                                        logWorkoutProvider,
-                                        'e.g., Running, Weight Training',
-                                        false,
-                                        '',
-                                        false,
-                                        'Workout Type',
-                                        0,
-                                      ),
-                                      QuestionTextWidget(
-                                          question: "Duration (minutes)"),
-                                      CustomTextField(
-                                        logWorkoutProvider,
-                                        'e.g., 45',
-                                        false,
-                                        '',
-                                        true,
-                                        'Duration',
-                                        1,
-                                      ),
-                                      QuestionTextWidget(question: 'Intensity'),
-                                      DropdownButtonFormField(
-                                        borderRadius: BorderRadius.circular(10),
-                                        dropdownColor: kWhite,
-                                        value: selectedValue,
-                                        decoration: InputDecoration(
-                                          enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            borderSide: BorderSide(
-                                                color:
-                                                    kFieldBorder), // Normal border color
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            borderSide: BorderSide(
-                                              color: kFieldBorder,
-                                            ), // On focus
-                                          ),
-
-                                          border:
-                                              OutlineInputBorder(), // Default border
-                                        ),
-                                        onChanged: (String? newValue) {
-                                          if (newValue != null) {
-                                            ref
-                                                .read(
-                                                    intensityProvider.notifier)
-                                                .state = newValue;
-                                          }
-                                        },
-                                        items: items.map((String value) {
-                                          return DropdownMenuItem(
-                                            value: value,
-                                            child: Text(
-                                              value,
-                                            ),
-                                          );
-                                        }).toList(),
-                                      ),
-                                      QuestionTextWidget(
-                                          question: 'Muscle Groups Worked'),
-                                      Wrap(
-                                        spacing: 2,
-                                        runSpacing: 2,
-                                        children: muscleGroups.map((muscle) {
-                                          return SelectableMuscleFilterChip(label: muscle, isSelected: false, questionIndex: 3,);
-                                        }).toList(),
-                                      ),
-                                      QuestionTextWidget(question: 'Notes'),
-                                      TextField(
-                                        maxLines: 3,
-                                        decoration: InputDecoration(
-                                          hintText: 'Any additional notes...',
-                                          focusedBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            borderSide:
-                                                BorderSide(color: kFieldBorder),
-                                          ),
-                                          border: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            borderSide:
-                                                BorderSide(color: kFieldBorder),
-                                          ),
-                                        ),
-                                        onChanged: (value) {
-                                          ref
-                                              .read(logWorkoutProvider.notifier)
-                                              .state = value;
-                                        },
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          GestureDetector(
-                                            onTap: () => Navigator.pop(context),
-                                            child: Text(
-                                              'Cancel',
-                                              style: kQuestionsText,
-                                            ),
-                                          ),
-                                          ElevatedButton(
-                                              onPressed: () {},
-                                              style: ElevatedButton.styleFrom(
-                                                  backgroundColor: kBlue,
-                                                  shape: RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadiusGeometry
-                                                              .circular(10))),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        vertical: 15),
-                                                child: Row(
-                                                  children: [
-                                                    Icon(
-                                                      Icons.save,
-                                                      color: kWhite,
-                                                    ),
-                                                    SizedBox(
-                                                      width: 8,
-                                                    ),
-                                                    Text(
-                                                      'Save Workout',
-                                                      style: TextStyle(
-                                                          color: kWhite,
-                                                          fontSize: 16,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ))
-                                        ],
-                                      )
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
+                                  Divider(),
+                                  QuestionTextWidget(
+                                    question: 'Workout Type',
+                                  ),
+                                  CustomTextField(
+                                    logWorkoutProvider,
+                                    'e.g., Running, Weight Training',
+                                    false,
+                                    '',
+                                    false,
+                                    'Workout Type',
+                                    0,
+                                  ),
+                                  QuestionTextWidget(
+                                      question: "Duration (minutes)"),
+                                  CustomTextField(
+                                    logWorkoutProvider,
+                                    'e.g., 45',
+                                    false,
+                                    '',
+                                    true,
+                                    'Duration',
+                                    1,
+                                  ),
+                                  QuestionTextWidget(question: 'Intensity'),
+                                  DropdownButtonFormField(
+                                    borderRadius: BorderRadius.circular(10),
+                                    dropdownColor: kWhite,
+                                    value: selectedValue,
+                                    decoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide(
+                                            color:
+                                                kFieldBorder), // Normal border color
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide(
+                                          color: kFieldBorder,
+                                        ), // On focus
+                                      ),
+
+                                      border:
+                                          OutlineInputBorder(), // Default border
+                                    ),
+                                    onChanged: (String? newValue) {
+                                      if (newValue != null) {
+                                        ref
+                                            .read(intensityProvider.notifier)
+                                            .state = newValue;
+                                      }
+                                    },
+                                    items: items.map((String value) {
+                                      return DropdownMenuItem(
+                                        value: value,
+                                        child: Text(
+                                          value,
+                                        ),
+                                      );
+                                    }).toList(),
+                                  ),
+                                  QuestionTextWidget(
+                                      question: 'Muscle Groups Worked'),
+                                  Wrap(
+                                    spacing: 2,
+                                    runSpacing: 2,
+                                    children: muscleGroups.map((muscle) {
+                                      return SelectableMuscleFilterChip(
+                                        label: muscle,
+                                        isSelected: false,
+                                        questionIndex: 3,
+                                      );
+                                    }).toList(),
+                                  ),
+                                  QuestionTextWidget(question: 'Notes'),
+                                  TextField(
+                                    maxLines: 3,
+                                    decoration: InputDecoration(
+                                      hintText: 'Any additional notes...',
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide:
+                                            BorderSide(color: kFieldBorder),
+                                      ),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide:
+                                            BorderSide(color: kFieldBorder),
+                                      ),
+                                    ),
+                                    onChanged: (value) {
+                                      ref
+                                          .read(logWorkoutProvider.notifier)
+                                          .state = value;
+                                    },
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () => Navigator.pop(context),
+                                        child: Text(
+                                          'Cancel',
+                                          style: kQuestionsText,
+                                        ),
+                                      ),
+                                      ElevatedButton(
+                                          onPressed: () {},
+                                          style: ElevatedButton.styleFrom(
+                                              backgroundColor: kBlue,
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadiusGeometry
+                                                          .circular(10))),
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 15),
+                                            child: Row(
+                                              children: [
+                                                Icon(
+                                                  Icons.save,
+                                                  color: kWhite,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  'Save Workout',
+                                                  style: TextStyle(
+                                                      color: kWhite,
+                                                      fontSize: 17,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ],
+                                            ),
+                                          ))
+                                    ],
+                                  )
+                                ],
                               ),
-                            );
-                          },
-                        ),
-                      );
-                    },
-                  ))
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
+            )
           : null,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: kWhite,
@@ -264,23 +260,6 @@ class NavigationScreen extends ConsumerWidget {
   }
 }
 
-class QuestionTextWidget extends StatelessWidget {
-  const QuestionTextWidget({
-    super.key,
-    required this.question,
-  });
-
-  final String question;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20, bottom: 5),
-      child: Text(question, style: kQuestionsText),
-    );
-  }
-}
-
 class NavigationBarItems extends ConsumerWidget {
   const NavigationBarItems({Key? key}) : super(key: key);
 
@@ -292,7 +271,7 @@ class NavigationBarItems extends ConsumerWidget {
       case 0:
         return HomePage();
       case 1:
-        return WorkoutPage();
+        return ExerciseScreen();
       case 2:
         return NutritionPage();
       default:

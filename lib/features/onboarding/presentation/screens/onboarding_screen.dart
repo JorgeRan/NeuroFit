@@ -94,6 +94,7 @@ class OnboardingScreen extends ConsumerWidget {
                       AnimatedProgressBar(
                         currentStep: counter,
                         maxSteps: 5,
+                        color: kBlue,
                       ),
                       const SizedBox(height: 20),
                       Expanded(

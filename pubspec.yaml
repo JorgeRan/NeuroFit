@@ -45,6 +45,11 @@ dependencies:
   percent_indicator: ^4.2.5
   gradient_progress_bar: ^1.0.7
   fl_chart: ^1.0.0
+  riverpod_lint: ^2.6.5
+  cart_stepper: ^4.3.0
+  stop_watch_timer: ^3.2.2
+  video_player: ^2.10.0
+  uuid: ^4.5.1
 
 dev_dependencies:
   flutter_test:
@@ -67,8 +72,10 @@ flutter:
   
   assets:
     - assets/images/
+    - assets/icons/
     - assets/muscles/front/
     - assets/muscles/back/
+    - assets/videos/PushUp.mp4
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

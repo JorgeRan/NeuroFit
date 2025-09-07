@@ -436,11 +436,14 @@ Widget buildDropdown({
 class AnimatedProgressBar extends StatefulWidget {
   final int currentStep;
   final int maxSteps;
+  final Color color;
+  
 
   const AnimatedProgressBar({
     super.key,
     required this.currentStep,
     required this.maxSteps,
+    required this.color,
   });
 
   @override
@@ -494,9 +497,9 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
         borderRadius: BorderRadius.circular(10),
         child: LinearProgressIndicator(
           value: _animation.value,
-          minHeight: 5,
+          minHeight: 7,
           backgroundColor: Colors.grey[300],
-          valueColor: AlwaysStoppedAnimation<Color>(kBlue),
+          valueColor: AlwaysStoppedAnimation<Color>(widget.color),
         ),
       ),
     );
@@ -806,6 +809,23 @@ class MuscleChip extends StatelessWidget {
         muscle,
         style: TextStyle(color:kBlue, fontSize: 17),
       ),
+    );
+  }
+}
+
+class QuestionTextWidget extends StatelessWidget {
+  const QuestionTextWidget({
+    super.key,
+    required this.question,
+  });
+
+  final String question;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 20, bottom: 5),
+      child: Text(question, style: kQuestionsText),
     );
   }
 }

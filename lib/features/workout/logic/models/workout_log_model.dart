@@ -1,11 +1,11 @@
 
-class WorkoutLog {
+class WorkoutLogModel {
   final String type;
   final int duration; 
   final String intensity;
   final DateTime timestamp;
 
-  WorkoutLog({
+  WorkoutLogModel({
     required this.type,
     required this.duration,
     required this.intensity,
@@ -19,7 +19,7 @@ class WorkoutLog {
         'timestamp': timestamp.toIso8601String(),
       };
 
-  factory WorkoutLog.fromJson(Map<String, dynamic> json) => WorkoutLog(
+  factory WorkoutLogModel.fromJson(Map<String, dynamic> json) => WorkoutLogModel(
         type: json['type'],
         duration: json['duration'],
         intensity: json['intensity'],
