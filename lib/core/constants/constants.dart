@@ -35,6 +35,14 @@ const Color kTextGrey = Color(0xFF757575);
 
 const Color kWorkoutPageColor = Color(0xFFEBF4FF);
 
+const Color kNutriitonPageColor = Color.fromARGB(255, 248, 255, 235);
+
+const Color kBreakfastColorCard = Color.fromRGBO(212, 232, 192, 1);
+
+const Color kLunchColorCard = Color.fromRGBO(252, 237, 192, 1);
+
+const Color kDinnerColorCard = Color.fromRGBO(193, 216, 232, 1);
+
 const Color kRed = Colors.red;
 
 const TextStyle kParagraphText = TextStyle(color: kBlack, fontSize: 15);

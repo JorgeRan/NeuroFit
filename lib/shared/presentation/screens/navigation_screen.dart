@@ -35,6 +35,7 @@ class NavigationScreen extends ConsumerWidget {
     final selectedValue = ref.watch(intensityProvider);
 
     return Scaffold(
+      backgroundColor: currentIndex == 1 ? kWorkoutPageColor : currentIndex == 2 ? kNutriitonPageColor : null,
       floatingActionButton: currentIndex == 1
           ? FloatingActionButton.extended(
               icon: Icon(
@@ -54,7 +55,7 @@ class NavigationScreen extends ConsumerWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadiusGeometry.circular(10)),
                     insetPadding:
-                        EdgeInsets.zero, // removes default dialog margin
+                        EdgeInsets.zero, 
                     backgroundColor: kWhite,
                     child: LayoutBuilder(
                       builder: (context, constraints) {
